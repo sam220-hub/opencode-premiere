@@ -1,0 +1,81 @@
+name: Bug report
+description: Something in the panel is broken, stuck or looks wrong
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Panel bugs usually depend on the Premiere/CEP
+        version and the OpenCode service version, so please fill those in.
+
+  - type: input
+    id: premiere
+    attributes:
+      label: Premiere Pro version
+      placeholder: "27.0.0 (2027)"
+    validations:
+      required: true
+
+  - type: input
+    id: opencode
+    attributes:
+      label: OpenCode version
+      description: Output of `opencode --version`
+      placeholder: "2.2.6"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "Windows 11 24H2 / macOS 15.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a project with ...
+        2. Open Window > Extensions > OpenCode
+        3. Send "..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      description: Screenshots or a short recording help a lot here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Panel log / console errors
+      description: |
+        CEP log: `%TEMP%\cep_logs\CEP*.log` (macOS: `~/Library/Logs/CSXS`).
+        For the panel console, add a `.debug` file with port 8088 and open
+        http://localhost:8088.
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I restarted Premiere completely after installing or updating the panel.
+          required: true
+        - label: I searched existing issues for the same problem.
+          required: true

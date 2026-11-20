@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <button class="icon" id="btn-sidebar" data-icon="menu" title="Sessions"></button>
+        <div class="titles">
+          <div class="t-title" id="session-title">New session</div>
+          <div class="t-sub" id="session-sub">connecting…</div>
+        </div>
+        <div class="grow"></div>
+        <span class="health" id="health"><i></i><span id="health-text">…</span></span>
+        <button class="icon" id="btn-changes" data-icon="diff" title="Changes"></button>
+        <button class="icon" id="btn-new" data-icon="plus" title="New chat"></button>
+      </header>
+
+      <section id="project-strip" class="project-strip">
+        <button class="p-main" id="btn-project" title="Project details">
+          <span class="p-dot"></span>
+          <span class="p-name" id="project-name">No Premiere project</span>
+          <span class="p-meta" id="project-meta"></span>
+        </button>
+        <button class="icon tiny" id="btn-project-more" data-icon="chev" title="Project details"></button>
+      </section>
+      <div class="project-detail hidden" id="project-detail"></div>
+
+      <main class="messages" id="messages"></main>
+
+      <button class="jump hidden" id="jump">Latest</button>
+
+      <div class="prompts" id="prompts"></div>
+
+      <footer class="composer-wrap">
+        <div class="cmd-pop hidden" id="cmd-pop"></div>
+        <div class="composer" id="composer">
+          <textarea id="input" rows="1" placeholder="Ask OpenCode…" spellcheck="false"></textarea>
+          <div class="cbar">
+            <button class="chip" id="btn-ctx" title="Include the Premiere project in your message"></button>
+            <button class="chip" id="btn-model" title="Switch model"></button>
+            <div class="grow"></div>
+            <button class="round stop hidden" id="btn-stop" data-icon="stop" title="Stop"></button>
+            <button class="round primary" id="btn-send" data-icon="send" title="Send"></button>
+          </div>
+        </div>
+        <div class="statusline">
+          <span id="stats"></span>
+          <span class="grow"></span>
+          <span id="hint">Enter send · Shift+Enter newline</span>
+        </div>
+      </footer>
+    </div>
+
+    <aside id="sidebar" class="sidebar">
+      <div class="side-head">
+        <div class="brand"><span class="brand-mark"></span>OpenCode</div>
+        <button class="icon" id="btn-side-close" data-icon="close" title="Close"></button>
+      </div>
+      <div class="side-actions">
+        <button class="btn primary wide" id="btn-side-new">New chat</button>
+      </div>
+      <div class="side-search"><input id="session-search" type="text" placeholder="Search sessions" /></div>
+      <div class="side-list" id="side-list"></div>
+      <div class="side-foot">
+        <button class="side-link" id="btn-side-files">Files</button>
+        <button class="side-link" id="btn-side-settings">Settings</button>
+      </div>
+    </aside>
+
+    <div class="scrim" id="scrim"></div>
+
+    <div class="sheet-wrap" id="sheet-wrap">
+      <div class="sheet" id="sheet">
+        <div class="sheet-head">
+          <span id="sheet-title">OpenCode</span>
+          <button class="icon" id="btn-sheet-close" data-icon="close" title="Close"></button>
+        </div>
+        <div class="sheet-body" id="sheet-body"></div>
+        <div class="sheet-foot" id="sheet-foot"></div>
+      </div>
+    </div>
+
+    <div class="toast hidden" id="toast"></div>
+
+    <script src="oc.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

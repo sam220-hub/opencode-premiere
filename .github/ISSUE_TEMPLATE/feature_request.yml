@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest an improvement for the panel
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe your workflow and where the panel gets in the way.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should the panel do instead? Mockups welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Chat / streaming
+        - Questions and permissions
+        - Premiere project data
+        - Timeline / editing actions
+        - Sessions and history
+        - Look and feel
+        - Installation / packaging
+        - Other
+    validations:
+      required: true

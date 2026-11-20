@@ -1,0 +1,26 @@
+# Build output
+dist/
+*.zip
+*.zxp
+*.zxp.sig
+
+# Logs and temp files
+*.log
+*.tmp
+npm-debug.log*
+
+# Editors and OS cruft
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node tooling (only needed if scripts are added later)
+node_modules/
+
+# Local packaging leftovers
+host-check.js
+
+# Local CEP debugger config
+.debug
